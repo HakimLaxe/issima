@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "productName": "Acqua Brio Rossa",
+        "imagePath": "brio.png",
+        "productType": "Bevanda",
+        "cost": 0.99
+    },
+    {
+        "id": 2,
+        "productName": "Acqua Ferrarelle",
+        "imagePath": "ferrarelle.png",
+        "productType": "Bevanda",
+        "cost": 1.50
+    },
+    {
+        "id": 3,
+        "productName": "Acqua Rocchetta",
+        "imagePath": "rocchetta.png",
+        "productType": "Bevanda",
+        "cost": 0.89
+    },
+    {
+        "id": 4,
+        "productName": "Acqua San Benedetto",
+        "imagePath": "sanbenedetto.png",
+        "productType": "Bevanda",
+        "cost": 0.45
+    },
+    {
+        "id": 5,
+        "productName": "Acqua Uliveto",
+        "imagePath": "uliveto.png",
+        "productType": "Bevanda",
+        "cost": 0.77
+    },
+    {
+        "id": 6,
+        "productName": "Patatine San Carlo",
+        "imagePath": "sancarlo.png",
+        "productType": "Cibo",
+        "cost": 1.42
+    },
+    {
+        "id": 7,
+        "productName": "Saikebon",
+        "imagePath": "saikebon.png",
+        "productType": "Cibo",
+        "cost": 1.15
+    }
+]
