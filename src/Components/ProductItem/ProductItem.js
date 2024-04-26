@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './ProductItem.css';
 
-const ProductItem = ({ name, price, imagePath }) => {
+const ProductItem = ({ name, price, imagePath, onChangeQuantity }) => {
     const [quantity, setQuantity] = useState(0);
 
-    const incrementQuantity = () => {
-        setQuantity(prevQuantity => prevQuantity + 1);
+    useEffect(() => {
+        onChangeQuantity(name, quantity)
+    }, [quantity])
+
+    const changeQuantity = (value) => {
+        setQuantity(prevQuantity => prevQuantity + value < 0 ? 0 : prevQuantity + value);
     };
 
-    const decrementQuantity = () => {
-        setQuantity(prevQuantity => (prevQuantity > 0 ? prevQuantity - 1 : 0));
-    };
 
     return (
         <div className={quantity > 0 ? "product-item-selected" : "product-item"}>
@@ -20,9 +21,9 @@ const ProductItem = ({ name, price, imagePath }) => {
             <div className="product-info">
                 <div className="product-name">{name}</div>
                 <div className="quantity-controls">
-                    <button onClick={decrementQuantity}>-</button>
+                    <button onClick={() => changeQuantity(-1)}>-</button>
                     <span>{quantity}</span>
-                    <button onClick={incrementQuantity}>+</button>
+                    <button onClick={() => changeQuantity(1)}>+</button>
                 </div>
                 <div className="product-cost">€{price.toFixed(2)}</div>
             </div>
