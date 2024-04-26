@@ -6,12 +6,16 @@ import Footer from './Components/Footer/Footer';
 import DeliveryForm from './Components/DeliveryForm/DeliveryForm';
 import ProductList from './Components/ProductList/ProductList';
 import { getSubject, getBody } from './Utility/MailUtils';
+import { showConfrimWindow } from './Components/ConfirmWindow/ConfirmWindow'
+import { displayErrorWindow } from './Components/ErrorWindow/ErrorWindow';
+import OrderSummary from './Components/OrderSummary/OrderSummary';
 
 function App() {
 
   const [products, setProducts] = useState([]);
   const [selectedProds, setSelectedProds] = useState([]);
   const [isOrderConfirmed, setIsOrderConfirmed] = useState(false)
+  const [isMailSent, setIsMailSent] = useState(false)
 
   useEffect(() => {
     fetch('/data/products.json')
@@ -48,12 +52,26 @@ function App() {
   }
 
   const onFormDelivered = (formData) => {
-    //sendEmail(formData)
-    let requestBody = {
-      subject: getSubject(formData),
-      message: getBody(formData, selectedProds, getProductsCost(), getShipmentCost(), getTotalCost())
-    }
-    sendEmail(requestBody)
+
+    showConfrimWindow().then(
+      res => {
+        if (res) {
+          let requestBody = {
+            subject: getSubject(formData),
+            message: getBody(formData, selectedProds, getProductsCost(), getShipmentCost(), getTotalCost())
+          }
+          sendEmail(requestBody).then(
+            sendigEmailResponse => {
+              if (sendigEmailResponse) {
+                setIsMailSent(true)
+              }
+              else {
+                displayErrorWindow()
+              }
+            }
+          )
+        }
+      })
   }
 
   const onOrderConfirmed = () => {
@@ -61,9 +79,12 @@ function App() {
   }
 
   const renderPage = () => {
-    if (isOrderConfirmed)
+    if (isOrderConfirmed && !isMailSent)
       return deliveryPage()
-    return productsPage()
+    else if (!isOrderConfirmed && !isMailSent)
+      return productsPage()
+    else
+      return orderSummaryPage()
   }
 
   const productsPage = () => {
@@ -82,6 +103,16 @@ function App() {
 
   const deliveryPage = () => {
     return (<DeliveryForm onFormDelivered={onFormDelivered} />);
+  }
+
+  const orderSummaryPage = () => {
+    return (<OrderSummary
+      selectedProds={selectedProds}
+      prodsCost={getProductsCost()}
+      shipmentCost={getShipmentCost()}
+      totalCost={getTotalCost()}
+    />
+    );
   }
 
   return (
