@@ -8,7 +8,7 @@ const ProductList = ({ products, onSelectedProdsChange }) => {
 
     useEffect(() => {
         onSelectedProdsChange(selectedProds)
-    }, [selectedProds])
+    }, [selectedProds, onSelectedProdsChange])
 
     useEffect(() => {
         fetch('/data/products.json')

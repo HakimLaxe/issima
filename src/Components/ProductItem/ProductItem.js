@@ -6,7 +6,7 @@ const ProductItem = ({ name, price, imagePath, onChangeQuantity }) => {
 
     useEffect(() => {
         onChangeQuantity(name, quantity)
-    }, [quantity])
+    }, [quantity, setQuantity, name])
 
     const changeQuantity = (value) => {
         setQuantity(prevQuantity => prevQuantity + value < 0 ? 0 : prevQuantity + value);
