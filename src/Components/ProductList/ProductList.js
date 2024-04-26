@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from 'react';
+import { React, useState, useEffect, useCallback } from 'react';
 import ProductItem from '../ProductItem/ProductItem';
 import './ProductList.css';
 
@@ -25,13 +25,15 @@ const ProductList = ({ products, onSelectedProdsChange }) => {
         setSelectedProds(initialProds)
     }
 
-    const onChangeQuantity = (prodName, quantity) => {
-        let tmpProds = [...selectedProds]
-        for (let prod of tmpProds)
-            if (prod.productName === prodName)
-                prod.quantity = quantity
-        setSelectedProds(tmpProds)
-    }
+    const onChangeQuantity = useCallback((prodName, quantity) => {
+        const productIndex = selectedProds.findIndex(prod => prod.productName === prodName);
+        if (selectedProds[productIndex].quantity !== quantity) {
+            const updatedProds = [...selectedProds];
+            updatedProds[productIndex] = { ...updatedProds[productIndex], quantity };
+            setSelectedProds(updatedProds);
+        }
+    }, [selectedProds]);
+
 
     const renderProducts = () => {
         if (products === []) {
