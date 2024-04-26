@@ -13,6 +13,7 @@ const DeliveryForm = ({ onFormDelivered }) => {
         firstName: '',
         lastName: '',
         address: '',
+        streetNumber: '',
         city: '',
         CAP: '',
         prov: '',

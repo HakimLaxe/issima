@@ -5,6 +5,7 @@ import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import DeliveryForm from './Components/DeliveryForm/DeliveryForm';
 import ProductList from './Components/ProductList/ProductList';
+import { getSubject, getBody } from './Utility/MailUtils';
 
 function App() {
 
@@ -47,7 +48,12 @@ function App() {
   }
 
   const onFormDelivered = (formData) => {
-    sendEmail(formData)
+    //sendEmail(formData)
+    let requestBody = {
+      subject: getSubject(formData),
+      message: getBody(formData, selectedProds, getProductsCost(), getShipmentCost(), getTotalCost())
+    }
+    sendEmail(requestBody)
   }
 
   const onOrderConfirmed = () => {
