@@ -1,5 +1,5 @@
-Issima is a simple frontend application made in React JS for a friend of mine.
-He asked me to create a web application oriented for mobile devices.
+https://issima.netlify.app/ Web App testing page
+Issima is a simple frontend application made in React JS for a friend of mine, he asked me to create a web application oriented for mobile devices.
 The purpose of the app is to allow customers to place orders payable on delivery (No payment mechanism is therefore integrated into the web app).
 After entering the data, an email is sent with the order information.
 
