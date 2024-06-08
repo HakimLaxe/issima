@@ -42,9 +42,15 @@ function App() {
   }
 
   const getShipmentCost = () => {
-    return selectedProds
+    const firstShipmentPart = selectedProds
       .filter(prod => prod.productType === 'Cibo' && prod.quantity > 0)
       .length > 0 ? 5.00 : 0.00
+
+    const secondShipmentPart = selectedProds
+      .filter(prod => prod.productType === 'Bevanda' && prod.quantity > 0)
+      .length < 5 ? 5.00 : 0.00
+
+    return Math.max(firstShipmentPart, secondShipmentPart)
   }
 
   const getTotalCost = () => {
