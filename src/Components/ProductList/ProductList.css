@@ -19,7 +19,7 @@
   }
   
   .filter-buttons button {
-    background-color: #78b0e2; /* Blu marino scuro per il bottone attivo */
+    background-color: #5a9fe4; /* Blu marino scuro per il bottone attivo */
     border: none;
     color: white;
     padding: 10px 20px;
@@ -34,7 +34,7 @@
   }
   
   .filter-buttons button:hover {
-    background-color: #0f40e2; /* Blu marino più chiaro per hover */
+    background-color: #1e7ed7; /* Blu marino più chiaro per hover */
   }
   
   .filter-buttons button:active {
@@ -47,7 +47,7 @@
   }
 
   .filter-buttons button:active {
-    background-color: #142c70; /* Blu marino scuro per active */
+    background-color: #0d30cc; /* Blu marino scuro per active */
   }
   
   .filter-buttons button:focus {
@@ -56,6 +56,17 @@
   }
   
   .filter-buttons button.active {
-    background-color: #1E3A8A; /* Blu marino */
+    background-color: #0d45c8; /* Blu marino */
   }
-  
+
+
+  .subcategory-label {
+    font-size: 24px;
+    font-weight: bold;
+    color: #FFFFFF; /* Colore del testo bianco */
+    margin: 20px 0 10px; /* Margine sopra e sotto per separare dalle altre sezioni */
+    padding: 10px;
+    border-left: 5px solid #2aa2ca; /* Bordo sinistro colore acqua */
+    background-color: #1abcf1; /* Sfondo colore acqua */
+    border-radius: 5px;
+  }

@@ -5,6 +5,7 @@ import './ProductList.css';
 const ProductList = ({ products, onSelectedProdsChange }) => {
     const [selectedProds, setSelectedProds] = useState([]);
     const [filteredProds, setFilteredProds] = useState([]);
+    const [categories, setCategories] = useState([]);
     const [filter, setFilter] = useState('Bevande');
 
     useEffect(() => {
@@ -22,6 +23,10 @@ const ProductList = ({ products, onSelectedProdsChange }) => {
         if (filter != null) {
             let tmpProds = products.filter(p => p.productType === filter);
             setFilteredProds(tmpProds);
+            const tmpCategories = tmpProds
+                .map( prod => prod.category)
+                .filter((value, index, self) => self.indexOf(value) === index);
+            setCategories(tmpCategories)
         }
     }, [filter, products]);
 
@@ -49,15 +54,24 @@ const ProductList = ({ products, onSelectedProdsChange }) => {
         if (filteredProds.length === 0) {
             return <div>Nessun prodotto disponibile</div>;
         }
-        return filteredProds.map(product => (
-            <ProductItem
-                key={product.id}
-                name={product.productName}
-                price={product.cost}
-                imagePath={`images/${product.imagePath}`}
-                quantity={selectedProds.find(p => p.productName === product.productName)?.quantity || 0}
-                onChangeQuantity={onChangeQuantity}
-            />
+
+        return categories.map( category => (
+            <div key={category}>
+                <h3 className="subcategory-label">{category}</h3>
+                {filteredProds
+                    .filter( p => p.category === category)
+                    .map( product => (
+                        <ProductItem
+                        key={product.id}
+                        name={product.productName}
+                        price={product.cost}
+                        imagePath={`images/${product.imagePath}`}
+                        quantity={selectedProds.find(p => p.productName === product.productName)?.quantity || 0}
+                        onChangeQuantity={onChangeQuantity}
+                    />
+                    ))
+                }
+            </div>
         ));
     };
 
