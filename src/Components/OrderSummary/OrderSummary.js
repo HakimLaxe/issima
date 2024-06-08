@@ -18,7 +18,9 @@ const OrderSummary = ({ selectedProds, prodsCost, shipmentCost, totalCost }) => 
                 </tr>
             </thead>
             <tbody>
-                {selectedProds.map(prod => (
+                {selectedProds
+                .filter( prod => prod.quantity > 0)
+                .map(prod => (
                     <tr key={prod.id}>
                         <td>{prod.productName}</td>
                         <td>{prod.cost}</td>
