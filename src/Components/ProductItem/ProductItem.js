@@ -1,20 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import './ProductItem.css';
 
-const ProductItem = ({ name, price, imagePath, onChangeQuantity }) => {
-    const [quantity, setQuantity] = useState(0);
+const ProductItem = ({ name, price, imagePath, quantity, onChangeQuantity }) => {
+    const [localQuantity, setLocalQuantity] = useState(quantity);
 
     useEffect(() => {
-        onChangeQuantity(name, quantity)
-    }, [quantity, name, setQuantity, onChangeQuantity])
+        if (localQuantity !== quantity) {
+            onChangeQuantity(name, localQuantity);
+        }
+    }, [localQuantity, name, onChangeQuantity, quantity]);
+
+    useEffect(() => {
+        setLocalQuantity(quantity); // Sincronizzare localQuantity con la quantità passata come prop
+    }, [quantity]);
 
     const changeQuantity = (value) => {
-        setQuantity(prevQuantity => prevQuantity + value < 0 ? 0 : prevQuantity + value);
+        setLocalQuantity(prevQuantity => Math.max(0, prevQuantity + value));
     };
 
-
     return (
-        <div className={quantity > 0 ? "product-item-selected" : "product-item"}>
+        <div className={localQuantity > 0 ? "product-item-selected" : "product-item"}>
             <div className="product-image">
                 <img src={imagePath} alt={name} />
             </div>
@@ -22,7 +27,7 @@ const ProductItem = ({ name, price, imagePath, onChangeQuantity }) => {
                 <div className="product-name">{name}</div>
                 <div className="quantity-controls">
                     <button onClick={() => changeQuantity(-1)}>-</button>
-                    <span>{quantity}</span>
+                    <span>{localQuantity}</span>
                     <button onClick={() => changeQuantity(1)}>+</button>
                 </div>
                 <div className="product-cost">€{price.toFixed(2)}</div>

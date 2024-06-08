@@ -3,7 +3,7 @@
         "id": 1,
         "productName": "Acqua Brio Rossa",
         "imagePath": "brio.png",
-        "productType": "Bevanda",
+        "productType": "Bevande",
         "cateogy": "Acqua",
         "cost": 0.99
     },
@@ -11,7 +11,7 @@
         "id": 2,
         "productName": "Acqua Ferrarelle",
         "imagePath": "ferrarelle.png",
-        "productType": "Bevanda",
+        "productType": "Bevande",
         "cateogy": "Acqua",
         "cost": 1.50
     },
@@ -19,7 +19,7 @@
         "id": 3,
         "productName": "Acqua Rocchetta",
         "imagePath": "rocchetta.png",
-        "productType": "Bevanda",
+        "productType": "Bevande",
         "cateogy": "Acqua",
         "cost": 0.89
     },
@@ -27,7 +27,7 @@
         "id": 4,
         "productName": "Acqua San Benedetto",
         "imagePath": "sanbenedetto.png",
-        "productType": "Bevanda",
+        "productType": "Bevande",
         "cateogy": "Acqua",
         "cost": 0.45
     },
@@ -35,7 +35,7 @@
         "id": 5,
         "productName": "Acqua Uliveto",
         "imagePath": "uliveto.png",
-        "productType": "Bevanda",
+        "productType": "Bevande",
         "cateogy": "Acqua",
         "cost": 0.77
     },
@@ -43,7 +43,7 @@
         "id": 6,
         "productName": "Patatine San Carlo",
         "imagePath": "sancarlo.png",
-        "productType": "Cibo",
+        "productType": "Alimenti",
         "cateogy": "Patatine",
         "cost": 1.42
     },
@@ -51,15 +51,15 @@
         "id": 7,
         "productName": "Saikebon",
         "imagePath": "saikebon.png",
-        "productType": "Cibo",
-        "cateogy": "Cibo orientale",
+        "productType": "Alimenti",
+        "cateogy": "Alimenti orientale",
         "cost": 1.15
     },
     {
         "id": 8,
         "productName": "Coca Cola confezione da 6",
         "imagePath": "cocacola.png",
-        "productType": "Bevanda",
+        "productType": "Bevande",
         "cateogy": "Bibita Gassata",
         "cost": 4.21
     },
@@ -67,7 +67,7 @@
         "id": 9,
         "productName": "Sprite confezione da 6",
         "imagePath": "sprite.png",
-        "productType": "Bevanda",
+        "productType": "Bevande",
         "cateogy": "Bibita Gassata",
         "cost": 3.79
     },
@@ -75,7 +75,7 @@
         "id": 10,
         "productName": "Fanta confezione da 4",
         "imagePath": "fanta.png",
-        "productType": "Bevanda",
+        "productType": "Bevande",
         "cateogy": "Bibita Gassata",
         "cost": 2.12
     },
@@ -83,7 +83,7 @@
         "id": 11,
         "productName": "Patatine Lays",
         "imagePath": "lays.png",
-        "productType": "Cibo",
+        "productType": "Alimenti",
         "cateogy": "Patatine",
         "cost": 2.12
     },
@@ -91,15 +91,15 @@
         "id": 12,
         "productName": "Ramen Maruchan",
         "imagePath": "maruchan.png",
-        "productType": "Cibo",
-        "cateogy": "Cibo orientale",
+        "productType": "Alimenti",
+        "cateogy": "Alimenti orientale",
         "cost": 2.12
     },
     {
         "id": 13,
         "productName": "Confezione 5 Twix",
         "imagePath": "twix.png",
-        "productType": "Cibo",
+        "productType": "Alimenti",
         "cateogy": "Dolci",
         "cost": 5.10
     },
@@ -107,7 +107,7 @@
         "id": 14,
         "productName": "Confezione 24 Bounty",
         "imagePath": "bounty.png",
-        "productType": "Cibo",
+        "productType": "Alimenti",
         "cateogy": "Dolci",
         "cost": 22.53
     },
@@ -115,7 +115,7 @@
         "id": 16,
         "productName": "Mix Caramelle Haribo",
         "imagePath": "haribo.jpeg",
-        "productType": "Cibo",
+        "productType": "Alimenti",
         "cateogy": "Dolci",
         "cost": 4.21
     }

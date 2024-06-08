@@ -4,3 +4,58 @@
     padding: 1rem;
     margin-bottom: 28%;
 }
+
+.product-list {
+    padding: 20px;
+  }
+  .product-list {
+    padding: 20px;
+  }
+  
+  .filter-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .filter-buttons button {
+    background-color: #78b0e2; /* Blu marino scuro per il bottone attivo */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 2px; /* Margine ridotto per avvicinare i bottoni */
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .filter-buttons button:hover {
+    background-color: #0f40e2; /* Blu marino più chiaro per hover */
+  }
+  
+  .filter-buttons button:active {
+    background-color: #142c70; /* Blu marino scuro per active */
+  }
+  
+  .filter-buttons button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(30, 58, 138, 0.5); /* Luce blu marino intorno al bottone quando ha il focus */
+  }
+
+  .filter-buttons button:active {
+    background-color: #142c70; /* Blu marino scuro per active */
+  }
+  
+  .filter-buttons button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(30, 58, 138, 0.5); /* Luce blu marino intorno al bottone quando ha il focus */
+  }
+  
+  .filter-buttons button.active {
+    background-color: #1E3A8A; /* Blu marino */
+  }
+  

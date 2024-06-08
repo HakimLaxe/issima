@@ -1,57 +1,82 @@
-import { React, useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import ProductItem from '../ProductItem/ProductItem';
 import './ProductList.css';
 
 const ProductList = ({ products, onSelectedProdsChange }) => {
-
     const [selectedProds, setSelectedProds] = useState([]);
+    const [filteredProds, setFilteredProds] = useState([]);
+    const [filter, setFilter] = useState('Bevande');
 
     useEffect(() => {
-        onSelectedProdsChange(selectedProds)
-    }, [selectedProds, onSelectedProdsChange])
+        onSelectedProdsChange(selectedProds);
+    }, [selectedProds, onSelectedProdsChange]);
 
     useEffect(() => {
         fetch('/data/products.json')
             .then(response => response.json())
             .then(data => setInitialSelectedProds(data))
             .catch(error => console.error('Error fetching products:', error));
-    }, [])
+    }, []);
+
+    useEffect(() => {
+        if (filter != null) {
+            let tmpProds = products.filter(p => p.productType === filter);
+            setFilteredProds(tmpProds);
+        }
+    }, [filter, products]);
 
     const setInitialSelectedProds = (prodsData) => {
-        let initialProds = []
-        prodsData.map(prod =>
-            initialProds.push({ productName: prod.productName, cost: prod.cost, productType: prod.productType, quantity: 0 })
-        )
-        setSelectedProds(initialProds)
-    }
+        const initialProds = prodsData.map(prod => ({
+            productName: prod.productName,
+            cost: prod.cost,
+            productType: prod.productType,
+            imagePath: prod.imagePath,
+            quantity: 0
+        }));
+        setSelectedProds(initialProds);
+    };
 
     const onChangeQuantity = useCallback((prodName, quantity) => {
-        const productIndex = selectedProds.findIndex(prod => prod.productName === prodName);
-        if (selectedProds[productIndex].quantity !== quantity) {
-            const updatedProds = [...selectedProds];
-            updatedProds[productIndex] = { ...updatedProds[productIndex], quantity };
-            setSelectedProds(updatedProds);
-        }
-    }, [selectedProds]);
-
+        setSelectedProds(prevSelectedProds => {
+            const updatedProds = prevSelectedProds.map(prod =>
+                prod.productName === prodName ? { ...prod, quantity } : prod
+            );
+            return updatedProds;
+        });
+    }, []);
 
     const renderProducts = () => {
-        if (products === []) {
-            return null;
+        if (filteredProds.length === 0) {
+            return <div>Nessun prodotto disponibile</div>;
         }
-        return products.map(product => (
+        return filteredProds.map(product => (
             <ProductItem
                 key={product.id}
                 name={product.productName}
                 price={product.cost}
                 imagePath={`images/${product.imagePath}`}
+                quantity={selectedProds.find(p => p.productName === product.productName)?.quantity || 0}
                 onChangeQuantity={onChangeQuantity}
             />
-        ))
-    }
+        ));
+    };
 
     return (
         <div className="product-list">
+            <div className="filter-buttons">
+                <button
+                    onClick={() => setFilter('Bevande')}
+                    className={filter === 'Bevande' ? 'active' : ''}
+                >
+                    Bevande
+                </button>
+                <button
+                    onClick={() => setFilter('Alimenti')}
+                    className={filter === 'Alimenti' ? 'active' : ''}
+                >
+                    Alimenti
+                </button>
+            </div>
             {renderProducts()}
         </div>
     );
