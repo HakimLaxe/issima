@@ -3,49 +3,176 @@
         "id": 1,
         "productName": "Acqua Brio Rossa",
         "imagePath": "brio.png",
-        "productType": "Bevanda",
+        "productType": "Bevande",
+        "category": "Acqua",
         "cost": 0.99
     },
     {
         "id": 2,
         "productName": "Acqua Ferrarelle",
         "imagePath": "ferrarelle.png",
-        "productType": "Bevanda",
+        "productType": "Bevande",
+        "category": "Acqua",
         "cost": 1.50
     },
     {
         "id": 3,
         "productName": "Acqua Rocchetta",
         "imagePath": "rocchetta.png",
-        "productType": "Bevanda",
+        "productType": "Bevande",
+        "category": "Acqua",
         "cost": 0.89
     },
     {
         "id": 4,
         "productName": "Acqua San Benedetto",
         "imagePath": "sanbenedetto.png",
-        "productType": "Bevanda",
+        "productType": "Bevande",
+        "category": "Acqua",
         "cost": 0.45
     },
     {
         "id": 5,
         "productName": "Acqua Uliveto",
         "imagePath": "uliveto.png",
-        "productType": "Bevanda",
+        "productType": "Bevande",
+        "category": "Acqua",
         "cost": 0.77
     },
     {
         "id": 6,
         "productName": "Patatine San Carlo",
         "imagePath": "sancarlo.png",
-        "productType": "Cibo",
+        "productType": "Alimenti",
+        "category": "Patatine",
         "cost": 1.42
     },
     {
         "id": 7,
         "productName": "Saikebon",
         "imagePath": "saikebon.png",
-        "productType": "Cibo",
+        "productType": "Alimenti",
+        "category": "Alimenti orientali",
         "cost": 1.15
+    },
+    {
+        "id": 8,
+        "productName": "Coca Cola confezione da 6",
+        "imagePath": "cocacola.png",
+        "productType": "Bevande",
+        "category": "Bibita Gassata",
+        "cost": 4.21
+    },
+    {
+        "id": 9,
+        "productName": "Sprite confezione da 6",
+        "imagePath": "sprite.png",
+        "productType": "Bevande",
+        "category": "Bibita Gassata",
+        "cost": 3.79
+    },
+    {
+        "id": 10,
+        "productName": "Fanta confezione da 4",
+        "imagePath": "fanta.png",
+        "productType": "Bevande",
+        "category": "Bibita Gassata",
+        "cost": 2.12
+    },
+    {
+        "id": 11,
+        "productName": "Patatine Lays",
+        "imagePath": "lays.png",
+        "productType": "Alimenti",
+        "category": "Patatine",
+        "cost": 2.12
+    },
+    {
+        "id": 12,
+        "productName": "Ramen Maruchan",
+        "imagePath": "maruchan.png",
+        "productType": "Alimenti",
+        "category": "Alimenti orientali",
+        "cost": 2.12
+    },
+    {
+        "id": 13,
+        "productName": "Confezione 5 Twix",
+        "imagePath": "twix.png",
+        "productType": "Alimenti",
+        "category": "Dolci",
+        "cost": 5.10
+    },
+    {
+        "id": 14,
+        "productName": "Confezione 24 Bounty",
+        "imagePath": "bounty.png",
+        "productType": "Alimenti",
+        "category": "Dolci",
+        "cost": 22.53
+    },
+    {
+        "id": 16,
+        "productName": "Mix Caramelle Haribo",
+        "imagePath": "haribo.jpeg",
+        "productType": "Alimenti",
+        "category": "Dolci",
+        "cost": 4.21
+    },
+    {
+        "id": 17,
+        "productName": "Spaghetti di Soia Mulan",
+        "imagePath": "mulan.png",
+        "productType": "Alimenti",
+        "category": "Alimenti orientali",
+        "cost": 2.19
+    },
+    {
+        "id": 18,
+        "productName": "Penne Barilla",
+        "imagePath": "penne-barilla.png",
+        "productType": "Alimenti",
+        "category": "Pasta",
+        "cost": 0.78
+    },
+    {
+        "id": 19,
+        "productName": "Spaghetti Rummo",
+        "imagePath": "spaghetti-rummo.png",
+        "productType": "Alimenti",
+        "category": "Pasta",
+        "cost": 0.72
+    },
+    {
+        "id": 20,
+        "productName": "Orecchiette Maffei",
+        "imagePath": "orecchiette-maffei.png",
+        "productType": "Alimenti",
+        "category": "Pasta",
+        "cost": 2.57
+    },
+    {
+        "id": 21,
+        "productName": "Succo di frutta Yoga Ace",
+        "imagePath": "yoga-ace.png",
+        "productType": "Bevande",
+        "category": "Succhi di frutta",
+        "cost": 1.19
+    },
+    {
+        "id": 22,
+        "productName": "Succo di frutta Yoga Pera",
+        "imagePath": "yoga-pera.png",
+        "productType": "Bevande",
+        "category": "Succhi di frutta",
+        "cost": 1.10
+    },
+    {
+        "id": 23,
+        "productName": "Succo di frutta Yoga Frutti d Bosco",
+        "imagePath": "yoga-bosco.png",
+        "productType": "Bevande",
+        "category": "Succhi di frutta",
+        "cost": 1.54
     }
 ]
