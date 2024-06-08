@@ -9,7 +9,8 @@ export function showConfrimWindow() {
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
-            confirmButtonText: "Conferma!"
+            confirmButtonText: "Conferma",
+            cancelButtonText: "Indietro"
         }).then((result) => {
             resolve(result.isConfirmed)
         });
